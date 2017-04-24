@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+
+        }
+        input{
+            border:1px solid #ccc;
+            padding:10px;
+            margin:10px;
+        }
+        button{
+            cursor:pointer;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <input type="text" value="北京市">
+    </p>
+    <p>
+        <input type="text" value="海淀区">
+    </p>
+    <p>
+        <button>传参</button>
+    </p>
+</body>
+<script>
+    var myFn = function(a, b)
+    {
+        alert(a.value);
+        alert(b.value)
+    };
+    window.onload = function ()
+    {
+        var oInput = document.getElementsByTagName("input");
+        var oBtn = document.getElementsByTagName("button")[0];
+        oBtn.onclick = function()
+        {
+            myFn(oInput[0],oInput[1])
+        }
+    };
+</script>
+</html>
