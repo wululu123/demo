@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移入改变样式，鼠标移出恢复。</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width:200px;
+            height:200px;
+            margin: 0 auto;
+            background-color: lightblue;
+            padding:20px;
+            border: 10px solid #ccc;
+            cursor:crosshair;
+        }
+        #box.hover{
+            color: #fff;
+            background-color: greenyellow;
+            border:10px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">鼠标移入改变样式，鼠标移出恢复。</div>
+</body>
+<script>
+    window.onload=function(){
+        var oDiv=document.getElementById("box");
+        oDiv.onmouseover=function(){
+            oDiv.className="hover";
+        };
+        oDiv.onmouseout=function(){
+            oDiv.className=''
+        }
+    }
+
+   /* window.onload = function () {
+        var oDiv = document.getElementById("box");
+        oDiv.onmouseover = function () {
+            oDiv.className = "hover"
+        };
+        oDiv.onmouseout = function () {
+            oDiv.className = ""
+        }
+    };*/
+</script>
+</html>

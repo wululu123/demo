@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出层效果</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width:300px;
+            height:500px;
+            margin: 10px auto;
+        }
+        #overlay{
+            width: 200px;
+            height:100px;
+            background-color: lightblue;
+            margin-top: 50px;
+            display: none;
+        }
+        #win{
+            width:200px;
+            height:10px;
+            background-color: yellow;
+            position: absolute;
+            top:80px;
+            left: 187px;
+            display: none;
+        }
+        #win span{
+            font-size: 12px;
+            position: absolute;
+            top:0;
+            left:180px
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <button>弹出层</button>
+        <div id="overlay"></div>
+        <div id="win"><h2><span id="close">×</span></h2></div
+    </div>
+</body>
+<script>
+    window.onload=function(){
+        var box=document.getElementById("box");
+        var btns=document.getElementsByTagName("button")[0];
+        var overlay=document.getElementById("overlay");
+        var win=document.getElementById("win");
+        var close=document.getElementById("close");
+        btns.onclick=function(){
+            overlay.style.display="block";
+            win.style.display="block";
+        }
+        close.onclick=function(){
+            overlay.style.display="none";
+            win.style.display="none";
+        }
+    }
+</script>
+</html>
